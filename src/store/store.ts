@@ -1,12 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit"
-import platesReducer from "./platesSlice"
+import { configureStore } from "@reduxjs/toolkit";
+// Import your reducers here
+import counterReducer from "./slices/counterSlice";
 
 export const store = configureStore({
   reducer: {
-    plates: platesReducer,
+    counter: counterReducer,
   },
-})
+});
 
-// ✅ Infer types
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+// ✅ Infer types for state & dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
